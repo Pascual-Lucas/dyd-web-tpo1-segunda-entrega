@@ -1201,6 +1201,35 @@ body:has(.promos) .catalogo {
     justify-items: center; /* center inner grid content */
   }
 
+  /* Asegurar que los controles del formulario no se salgan de la pantalla en móviles */
+  .calculator .contacto-form,
+  .calculator .contacto-form #product,
+  .calculator .contacto-form #quantity,
+  .calculator .contacto-form #promo-select,
+  .calculator .contacto-form .form-input,
+  .calculator .contacto-form select,
+  .calculator .contacto-form input,
+  .calculator .contacto-form .form-button {
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Reducir padding lateral para evitar scroll horizontal en móviles pequeños */
+  .container,
+  .calculator {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* Ajustes para el botón calcular: que no quede demasiado ancho ni salga de la pantalla */
+  .calculator .contacto-form #calculate-btn {
+    min-width: 0;
+    width: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
   .products-grid {
     grid-template-columns: 1fr;
     gap: 18px;
