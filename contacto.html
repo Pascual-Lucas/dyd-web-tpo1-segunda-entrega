@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - Granos Dorados</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header and Navigation -->
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <div class="logo-icon">
+            <div class="coffee-beans">
+              <div class="bean bean1"></div>
+              <div class="bean bean2"></div>
+            </div>
+          </div>
+          <h1 class="logo-text"><a href="index.html">GRANOS DORADOS</a></h1>
+        </div>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="historia.html" class="nav-link">Historia</a></li>
+            <li><a href="catalogo.html" class="nav-link">Catálogo</a></li>
+            <li><a href="promociones.html" class="nav-link">Promociones</a></li>
+          </ul>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <input
+          type="checkbox"
+          id="mobile-menu-checkbox"
+          class="mobile-menu-checkbox"
+        />
+        <label for="mobile-menu-checkbox" class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <nav class="mobile-nav">
+          <ul class="mobile-nav-list">
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="historia.html" class="nav-link">Historia</a></li>
+            <li><a href="catalogo.html" class="nav-link">Catálogo</a></li>
+            <li><a href="promociones.html" class="nav-link">Promociones</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Contacto Section -->
+    <section class="contacto">
+      <div class="container">
+        <div class="contacto-content">
+          <div class="contacto-form-section">
+            <h2 class="contacto-title">CONTACTO</h2>
+            <p class="contacto-subtitle">
+              Tu café, nuestra pasión - siempre cerca tuyo.
+            </p>
+
+            <form class="contacto-form">
+              <input
+                type="text"
+                placeholder="Nombre"
+                class="form-input"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                class="form-input"
+                required
+              />
+              <textarea
+                placeholder="Mensaje..."
+                class="form-textarea"
+                rows="6"
+                required
+              ></textarea>
+              <button type="submit" class="form-button">ENVIAR</button>
+            </form>
+          </div>
+
+          <div class="contacto-map-section">
+            <h3 class="map-title">Buenos Aires</h3>
+            <div class="map-container">
+              <div class="map-background">
+                <img
+                  src="assets/asset-mapa-granos-dorados-removebg-preview.png"
+                  alt="Mapa Buenos Aires"
+                  class="map-image"
+                />
+                <div class="location-info">
+                  <div class="location-item">
+                    <span class="location-label">Junín 1700, Recoleta</span>
+                    <span class="location-desc"
+                      >Nuestra cafetería principal</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <div class="logo">
+              <div class="logo-icon">
+                <div class="coffee-beans">
+                  <div class="bean bean1"></div>
+                  <div class="bean bean2"></div>
+                </div>
+              </div>
+              <h3 class="logo-text">GRANOS DORADOS</h3>
+            </div>
+          </div>
+
+          <div class="footer-info">
+            <div class="footer-section">
+              <h4>CONTÁCTANOS</h4>
+              <p>📍 Junín 1700 • Recoleta, Buenos Aires</p>
+              <p>✉️ granosdorados@hotmail.com</p>
+              <p>📞 (+54) 11-2486-5709</p>
+            </div>
+
+            <div class="footer-section">
+              <h4>GRANOS DORADOS</h4>
+              <nav class="footer-nav">
+                <a href="index.html">Inicio</a>
+                <a href="historia.html">Nuestra Historia</a>
+                <a href="catalogo.html">Catálogo</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

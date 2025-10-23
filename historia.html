@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuestra Historia - Granos Dorados</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header and Navigation -->
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <div class="logo-icon">
+            <div class="coffee-beans">
+              <div class="bean bean1"></div>
+              <div class="bean bean2"></div>
+            </div>
+          </div>
+          <h1 class="logo-text"><a href="index.html">GRANOS DORADOS</a></h1>
+        </div>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="catalogo.html" class="nav-link">Catálogo</a></li>
+            <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            <li><a href="promociones.html" class="nav-link">Promociones</a></li>
+          </ul>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <input
+          type="checkbox"
+          id="mobile-menu-checkbox"
+          class="mobile-menu-checkbox"
+        />
+        <label for="mobile-menu-checkbox" class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <nav class="mobile-nav">
+          <ul class="mobile-nav-list">
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="catalogo.html" class="nav-link">Catálogo</a></li>
+            <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            <li><a href="promociones.html" class="nav-link">Promociones</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Historia Section -->
+    <section class="historia">
+      <div class="container">
+        <div class="historia-content">
+          <div class="historia-text">
+            <div class="section-header">
+              <span class="section-subtitle">DON PASCUAL</span>
+              <h2 class="section-title">NUESTRA HISTORIA</h2>
+            </div>
+            <p class="historia-description">
+              En el corazón del barrio, desde 1985, tostamos con pasión los
+              mejores granos de las montañas colombianas y brasileñas. Todo
+              comenzó cuando Don Pascual decidió traer los sabores tradicionales
+              del café que tanto amaba.
+            </p>
+            <p class="historia-description">
+              <em
+                >¿Café artesanal, decía? No es una moda pasajera. Es un
+                compromiso con la excelencia que se perfecciona con cada
+                generación.</em
+              >
+            </p>
+            <button
+              class="cta-button"
+              onclick="window.location.href='contacto.html'"
+            >
+              COMUNICATE
+            </button>
+          </div>
+          <div class="historia-image">
+            <img
+              src="assets/historia-camposcafe.png"
+              alt="Campos de café al amanecer"
+              class="historia-img"
+            />
+          </div>
+          <div class="year-badge">1985</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <div class="logo">
+              <div class="logo-icon">
+                <div class="coffee-beans">
+                  <div class="bean bean1"></div>
+                  <div class="bean bean2"></div>
+                </div>
+              </div>
+              <h3 class="logo-text">GRANOS DORADOS</h3>
+            </div>
+          </div>
+
+          <div class="footer-info">
+            <div class="footer-section">
+              <h4>CONTÁCTANOS</h4>
+              <p>📍 Junín 1700 • Recoleta, Buenos Aires</p>
+              <p>✉️ granosdorados@hotmail.com</p>
+              <p>📞 (+54) 11-2486-5709</p>
+            </div>
+
+            <div class="footer-section">
+              <h4>GRANOS DORADOS</h4>
+              <nav class="footer-nav">
+                <a href="index.html">Inicio</a>
+                <a href="catalogo.html">Catálogo</a>
+                <a href="contacto.html">Contacto</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

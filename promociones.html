@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promociones - Granos Dorados</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <div class="logo-icon">
+            <div class="coffee-beans">
+              <div class="bean bean1"></div>
+              <div class="bean bean2"></div>
+            </div>
+          </div>
+          <h1 class="logo-text"><a href="index.html">GRANOS DORADOS</a></h1>
+        </div>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="historia.html" class="nav-link">Historia</a></li>
+            <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            <li>
+              <a href="catalogo.html" class="nav-link active">Catalogo</a>
+            </li>
+          </ul>
+        </nav>
+
+        <input
+          type="checkbox"
+          id="mobile-menu-checkbox"
+          class="mobile-menu-checkbox"
+        />
+        <label for="mobile-menu-checkbox" class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <nav class="mobile-nav">
+          <ul class="mobile-nav-list">
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="historia.html" class="nav-link">Historia</a></li>
+            <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            <li>
+              <a href="catalogo.html" class="nav-link active">Catalogo</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="catalogo">
+      <div class="container">
+        <div class="section-header centered">
+          <span class="section-subtitle">GRANOS DORADOS</span>
+          <h2 class="section-title">PROMOCIONES ACTIVAS</h2>
+          <p class="section-description">
+            Aprovechá nuestras promos y ahorrá en cada taza. Elegí productos,
+            cantidades y mirá el cálculo en tiempo real.
+          </p>
+        </div>
+
+        <section aria-labelledby="promos" class="promos">
+          <div class="products-grid">
+            <!-- Promotion cards -->
+            <article class="product-card" aria-labelledby="promo1">
+              <h3 id="promo1" class="product-name">Promo 1 — 50% en el 2°</h3>
+              <p class="product-description">
+                Llevá 2 productos iguales y obtené 50% de descuento en el
+                segundo.
+              </p>
+            </article>
+
+            <article class="product-card" aria-labelledby="promo2">
+              <h3 id="promo2" class="product-name">Promo 2 — 3x2</h3>
+              <p class="product-description">
+                Comprá 3 unidades de productos seleccionados y pagás 2.
+              </p>
+            </article>
+
+            <article class="product-card" aria-labelledby="promo3">
+              <h3 id="promo3" class="product-name">
+                Promo 3 — 10% sobre $30.000
+              </h3>
+              <p class="product-description">
+                10% de descuento automático en compras superiores a $30.000.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section
+          class="calculator"
+          aria-labelledby="calculator-title"
+          style="margin-top: 30px"
+        >
+          <h3
+            id="calculator-title"
+            class="section-title"
+            style="font-size: 1.5rem"
+          >
+            Calculadora de Promociones
+          </h3>
+          <p class="section-description" style="max-width: 700px">
+            Seleccioná productos y cantidades para ver el monto sin descuento,
+            el descuento aplicado y el total final.
+          </p>
+
+          <form
+            id="promo-form"
+            class="contacto-form"
+            onsubmit="return false;"
+            style="margin-top: 16px"
+          >
+            <label for="product" style="font-weight: 600">Producto</label>
+            <select
+              id="product"
+              class="form-input"
+              aria-label="Seleccionar producto"
+            >
+              <option value="pascual" data-price="12000">
+                CAFÉ PASCUAL — $12.000
+              </option>
+              <option value="altura" data-price="15000">
+                CAFÉ DE ALTURA — $15.000
+              </option>
+              <option value="blend" data-price="14000">
+                BLEND ARTESANAL — $14.000
+              </option>
+            </select>
+
+            <label for="quantity" style="font-weight: 600; margin-top: 8px"
+              >Cantidad</label
+            >
+            <input
+              id="quantity"
+              class="form-input"
+              type="number"
+              min="1"
+              value="1"
+            />
+
+            <label for="promo-select" style="font-weight: 600; margin-top: 8px"
+              >Promoción</label
+            >
+            <select
+              id="promo-select"
+              class="form-input"
+              aria-label="Seleccionar promoción"
+            >
+              <option value="none">Sin promo</option>
+              <option value="half_second">
+                Llevá 2 y obtené 50% en el segundo
+              </option>
+              <option value="three_for_two">3x2 (completá 3 y pagás 2)</option>
+              <option value="ten_over_30000">
+                10% de descuento por compras > $30.000
+              </option>
+            </select>
+
+            <button
+              id="calculate-btn"
+              type="button"
+              class="form-button"
+              style="margin-top: 12px; width: 220px"
+            >
+              Calcular
+            </button>
+          </form>
+
+          <div id="results" style="margin-top: 18px">
+            <div class="product-card" style="background: #fff; padding: 18px">
+              <p id="total-raw">Total sin descuento: <strong>$0</strong></p>
+              <p id="discount-amount">
+                Descuento aplicado: <strong>$0</strong>
+              </p>
+              <p id="total-final">Total final: <strong>$0</strong></p>
+              <p
+                id="savings"
+                style="
+                  color: var(--primary-brown);
+                  font-weight: 600;
+                  margin-top: 8px;
+                "
+              >
+                Ahorro: <strong>$0</strong>
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <div class="logo">
+              <div class="logo-icon">
+                <div class="coffee-beans">
+                  <div class="bean bean1"></div>
+                  <div class="bean bean2"></div>
+                </div>
+              </div>
+              <h3 class="logo-text">GRANOS DORADOS</h3>
+            </div>
+          </div>
+
+          <div class="footer-info">
+            <div class="footer-section">
+              <h4>CONTÁCTANOS</h4>
+              <p>📍 Junín 1700 • Recoleta, Buenos Aires</p>
+              <p>✉️ granosdorados@hotmail.com</p>
+              <p>📞 (+54) 11-2486-5709</p>
+            </div>
+
+            <div class="footer-section">
+              <h4>GRANOS DORADOS</h4>
+              <nav class="footer-nav">
+                <a href="index.html">Inicio</a>
+                <a href="historia.html">Nuestra Historia</a>
+                <a href="contacto.html">Contacto</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="promociones.js"></script>
+  </body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo - Granos Dorados</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header and Navigation -->
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <div class="logo-icon">
+            <div class="coffee-beans">
+              <div class="bean bean1"></div>
+              <div class="bean bean2"></div>
+            </div>
+          </div>
+          <h1 class="logo-text"><a href="index.html">GRANOS DORADOS</a></h1>
+        </div>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="historia.html" class="nav-link">Historia</a></li>
+            <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            <li><a href="promociones.html" class="nav-link">Promociones</a></li>
+          </ul>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <input
+          type="checkbox"
+          id="mobile-menu-checkbox"
+          class="mobile-menu-checkbox"
+        />
+        <label for="mobile-menu-checkbox" class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <nav class="mobile-nav">
+          <ul class="mobile-nav-list">
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="historia.html" class="nav-link">Historia</a></li>
+            <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            <li><a href="promociones.html" class="nav-link">Promociones</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Catálogo Section -->
+    <section class="catalogo">
+      <div class="container">
+        <div class="section-header centered">
+          <span class="section-subtitle">GRANOS DORADOS</span>
+          <h2 class="section-title">NUESTROS CAFÉS SIGNATURE</h2>
+          <p class="section-description">
+            Descubrir la esencia del café tradicional tostado artesanalmente
+          </p>
+        </div>
+
+        <!-- Desktop Carousel (3 products) -->
+        <div class="desktop-carousel">
+          <div class="carousel-container-desktop">
+            <div class="carousel-desktop">
+              <input
+                type="radio"
+                name="carousel-desktop"
+                id="desktop-slide1"
+                checked
+              />
+              <input type="radio" name="carousel-desktop" id="desktop-slide2" />
+
+              <div class="carousel-slides-desktop">
+                <!-- First set of 3 products -->
+                <div class="slide-desktop">
+                  <div class="products-row">
+                    <div class="product-card">
+                      <img
+                        src="assets/producto-granos-pascual.png"
+                        alt="Café Pascual"
+                        class="product-image"
+                      />
+                      <h3 class="product-name">CAFÉ PASCUAL</h3>
+                      <p class="product-description">
+                        Mezcla de Grano<br />
+                        Notas achocolatadas con cuerpo acentuado<br />
+                        Tostado medio desde 1985
+                      </p>
+                      <span class="product-stock">EN STOCK</span>
+                      <div class="product-price">12.000 $ARS</div>
+                      <div class="product-actions">
+                        <button class="btn-favorite">♡</button>
+                        <button class="btn-cart">🛒</button>
+                      </div>
+                    </div>
+                    <div class="product-card">
+                      <img
+                        src="assets/producto-granos-altura.png"
+                        alt="Café de Altura"
+                        class="product-image"
+                      />
+                      <h3 class="product-name">CAFÉ DE ALTURA</h3>
+                      <p class="product-description">
+                        Granos Colombianos<br />
+                        Acidez vibrante con dulzor natural<br />
+                        Proceso lavado
+                      </p>
+                      <span class="product-stock">EN STOCK</span>
+                      <div class="product-price">15.000 $ARS</div>
+                      <div class="product-actions">
+                        <button class="btn-favorite">♡</button>
+                        <button class="btn-cart">🛒</button>
+                      </div>
+                    </div>
+                    <div class="product-card">
+                      <img
+                        src="assets/producto-blend-artesanal.png"
+                        alt="Blend Artesanal"
+                        class="product-image"
+                      />
+                      <h3 class="product-name">BLEND ARTESANAL</h3>
+                      <p class="product-description">
+                        Tostado Oscuro<br />
+                        Combinación equilibrada con cuerpo intenso<br />
+                        Ideal para espresso
+                      </p>
+                      <span class="product-stock">EN STOCK</span>
+                      <div class="product-price">14.000 $ARS</div>
+                      <div class="product-actions">
+                        <button class="btn-favorite">♡</button>
+                        <button class="btn-cart">🛒</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Second set of products -->
+                <div class="slide-desktop">
+                  <div class="products-row">
+                    <div class="product-card">
+                      <img
+                        src="assets/producto-blend-pascual.png"
+                        alt="Blend Pascual"
+                        class="product-image"
+                      />
+                      <h3 class="product-name">BLEND PASCUAL</h3>
+                      <p class="product-description">
+                        Mezcla Especial<br />
+                        Sabor suave, notas florales y de caramelo<br />
+                        Perfecto para filtrado
+                      </p>
+                      <span class="product-stock">EN STOCK</span>
+                      <div class="product-price">13.000 $ARS</div>
+                      <div class="product-actions">
+                        <button class="btn-favorite">♡</button>
+                        <button class="btn-cart">🛒</button>
+                      </div>
+                    </div>
+                    <div class="product-card">
+                      <img
+                        src="assets/producto-granos-pascual.png"
+                        alt="Café Especial"
+                        class="product-image"
+                      />
+                      <h3 class="product-name">CAFÉ ESPECIAL</h3>
+                      <p class="product-description">
+                        Edición Limitada<br />
+                        Notas frutales y cítricas<br />
+                        Tueste claro artesanal
+                      </p>
+                      <span class="product-stock">EN STOCK</span>
+                      <div class="product-price">16.000 $ARS</div>
+                      <div class="product-actions">
+                        <button class="btn-favorite">♡</button>
+                        <button class="btn-cart">🛒</button>
+                      </div>
+                    </div>
+                    <div class="product-card">
+                      <img
+                        src="assets/producto-blend-artesanal.png"
+                        alt="Café Premium"
+                        class="product-image"
+                      />
+                      <h3 class="product-name">CAFÉ PREMIUM</h3>
+                      <p class="product-description">
+                        Selección Premium<br />
+                        Cuerpo robusto con final persistente<br />
+                        Para conocedores
+                      </p>
+                      <span class="product-stock">EN STOCK</span>
+                      <div class="product-price">18.000 $ARS</div>
+                      <div class="product-actions">
+                        <button class="btn-favorite">♡</button>
+                        <button class="btn-cart">🛒</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Desktop Carousel Navigation -->
+              <div class="carousel-nav-desktop">
+                <label for="desktop-slide1" class="nav-dot"></label>
+                <label for="desktop-slide2" class="nav-dot"></label>
+              </div>
+
+              <!-- Desktop Carousel Arrows -->
+              <label for="desktop-slide2" class="carousel-arrow-desktop next"
+                >›</label
+              >
+              <label
+                for="desktop-slide1"
+                class="carousel-arrow-desktop prev"
+                style="display: none"
+                >‹</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Grid -->
+        <div class="mobile-grid">
+          <div class="products-grid" id="products-grid">
+            <!-- Initial 4 products visible -->
+            <div class="product-card mobile-product">
+              <img
+                src="assets/producto-granos-pascual.png"
+                alt="Café Pascual"
+                class="product-image"
+              />
+              <h3 class="product-name">CAFÉ PASCUAL</h3>
+              <p class="product-description">
+                Mezcla de Grano<br />
+                Notas achocolatadas
+              </p>
+              <span class="product-stock">EN STOCK</span>
+              <div class="product-price">12.000 $ARS</div>
+              <div class="product-actions">
+                <button class="btn-favorite">♡</button>
+                <button class="btn-cart">🛒</button>
+              </div>
+            </div>
+
+            <div class="product-card mobile-product">
+              <img
+                src="assets/producto-granos-altura.png"
+                alt="Café de Altura"
+                class="product-image"
+              />
+              <h3 class="product-name">CAFÉ DE ALTURA</h3>
+              <p class="product-description">
+                Granos Colombianos<br />
+                Acidez vibrante
+              </p>
+              <span class="product-stock">EN STOCK</span>
+              <div class="product-price">15.000 $ARS</div>
+              <div class="product-actions">
+                <button class="btn-favorite">♡</button>
+                <button class="btn-cart">🛒</button>
+              </div>
+            </div>
+
+            <div class="product-card mobile-product">
+              <img
+                src="assets/producto-blend-artesanal.png"
+                alt="Blend Artesanal"
+                class="product-image"
+              />
+              <h3 class="product-name">BLEND ARTESANAL</h3>
+              <p class="product-description">
+                Tostado Oscuro<br />
+                Cuerpo intenso
+              </p>
+              <span class="product-stock">EN STOCK</span>
+              <div class="product-price">14.000 $ARS</div>
+              <div class="product-actions">
+                <button class="btn-favorite">♡</button>
+                <button class="btn-cart">🛒</button>
+              </div>
+            </div>
+
+            <div class="product-card mobile-product">
+              <img
+                src="assets/producto-blend-pascual.png"
+                alt="Blend Pascual"
+                class="product-image"
+              />
+              <h3 class="product-name">BLEND PASCUAL</h3>
+              <p class="product-description">
+                Mezcla Especial<br />
+                Notas florales
+              </p>
+              <span class="product-stock">EN STOCK</span>
+              <div class="product-price">13.000 $ARS</div>
+              <div class="product-actions">
+                <button class="btn-favorite">♡</button>
+                <button class="btn-cart">🛒</button>
+              </div>
+            </div>
+
+            <!-- Hidden products for "load more" -->
+            <div class="product-card mobile-product hidden">
+              <img
+                src="assets/producto-granos-pascual.png"
+                alt="Café Especial"
+                class="product-image"
+              />
+              <h3 class="product-name">CAFÉ ESPECIAL</h3>
+              <p class="product-description">
+                Edición Limitada<br />
+                Notas frutales
+              </p>
+              <span class="product-stock">EN STOCK</span>
+              <div class="product-price">16.000 $ARS</div>
+              <div class="product-actions">
+                <button class="btn-favorite">♡</button>
+                <button class="btn-cart">🛒</button>
+              </div>
+            </div>
+
+            <div class="product-card mobile-product hidden">
+              <img
+                src="assets/producto-blend-artesanal.png"
+                alt="Café Premium"
+                class="product-image"
+              />
+              <h3 class="product-name">CAFÉ PREMIUM</h3>
+              <p class="product-description">
+                Selección Premium<br />
+                Cuerpo robusto
+              </p>
+              <span class="product-stock">EN STOCK</span>
+              <div class="product-price">18.000 $ARS</div>
+              <div class="product-actions">
+                <button class="btn-favorite">♡</button>
+                <button class="btn-cart">🛒</button>
+              </div>
+            </div>
+          </div>
+
+          <button class="load-more-btn" onclick="loadMoreProducts()">
+            Ver mas cafés
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <div class="logo">
+              <div class="logo-icon">
+                <div class="coffee-beans">
+                  <div class="bean bean1"></div>
+                  <div class="bean bean2"></div>
+                </div>
+              </div>
+              <h3 class="logo-text">GRANOS DORADOS</h3>
+            </div>
+          </div>
+
+          <div class="footer-info">
+            <div class="footer-section">
+              <h4>CONTÁCTANOS</h4>
+              <p>📍 Junín 1700 • Recoleta, Buenos Aires</p>
+              <p>✉️ granosdorados@hotmail.com</p>
+              <p>📞 (+54) 11-2486-5709</p>
+            </div>
+
+            <div class="footer-section">
+              <h4>GRANOS DORADOS</h4>
+              <nav class="footer-nav">
+                <a href="index.html">Inicio</a>
+                <a href="historia.html">Nuestra Historia</a>
+                <a href="contacto.html">Contacto</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function loadMoreProducts() {
+        const hiddenProducts = document.querySelectorAll(
+          ".mobile-product.hidden"
+        );
+        const loadMoreBtn = document.querySelector(".load-more-btn");
+
+        hiddenProducts.forEach((product) => {
+          product.classList.remove("hidden");
+        });
+
+        loadMoreBtn.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
