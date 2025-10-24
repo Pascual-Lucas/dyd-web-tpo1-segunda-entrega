@@ -1,101 +1,85 @@
-// promociones.js
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   // Referencias a elementos del formulario
   const productSelect = document.getElementById("product");
   const quantityInput = document.getElementById("quantity");
   const promoSelect = document.getElementById("promo-select");
   const calculateBtn = document.getElementById("calculate-btn");
 
-  // Referencias a contenedores donde se muestran los resultados
+  // Referencias a elementos donde mostramos resultados
   const totalRawEl = document.getElementById("total-raw");
   const discountAmountEl = document.getElementById("discount-amount");
   const totalFinalEl = document.getElementById("total-final");
   const savingsEl = document.getElementById("savings");
 
-  // Si faltan elementos esenciales, no ejecutar la lógica
-  if (!productSelect || !quantityInput || !promoSelect || !calculateBtn) {
-    console.warn(
-      "promociones.js: elementos del formulario no encontrados. Revisar IDs en HTML."
-    );
-    return;
-  }
-  if (!totalRawEl || !discountAmountEl || !totalFinalEl || !savingsEl) {
-    console.warn(
-      "promociones.js: elementos de resultados no encontrados. Revisar IDs en HTML."
-    );
-    return;
-  }
+  // Si falta algo esencial, salir silenciosamente
+  if (!productSelect || !quantityInput || !promoSelect || !calculateBtn) return;
+  if (!totalRawEl || !discountAmountEl || !totalFinalEl || !savingsEl) return;
 
-  // Extrae el precio desde el atributo data-price de una opción
-  function parsePriceFromOption(opt) {
-    const price = Number(
-      opt.dataset.price || opt.getAttribute("data-price") || 0
-    );
-    return isNaN(price) ? 0 : price;
-  }
+  // Lee precio desde data-price de la opción
+  const parsePriceFromOption = (option) => {
+    const raw =
+      option?.dataset?.price || option?.getAttribute("data-price") || 0;
+    const n = Number(raw);
+    return isNaN(n) ? 0 : n;
+  };
 
-  // Formatea números como moneda local (Argentina)
-  function formatCurrency(num) {
-    return "$" + Number(num).toLocaleString("es-AR");
-  }
+  // Formatea número como moneda local (Argentina)
+  const formatCurrency = (n) => `$${new Intl.NumberFormat("es-AR").format(n)}`;
 
-  // Calcula totales y descuentos según la promoción seleccionada
-  function calculate() {
+  // Calcula subtotal, descuento y totales según la promoción
+  const calculateTotals = () => {
     const selectedOption = productSelect.options[productSelect.selectedIndex];
     const unitPrice = parsePriceFromOption(selectedOption);
     let qty = Number(quantityInput.value) || 0;
     if (qty < 0) qty = 0;
 
     const promo = promoSelect.value;
+    const subtotal = unitPrice * qty;
 
-    const totalRaw = unitPrice * qty;
     let discount = 0;
     let note = "";
 
     if (promo === "half_second") {
-      // Por cada par, el segundo tiene 50% de descuento
-      const pairs = Math.floor(qty / 2);
-      discount = pairs * unitPrice * 0.5;
-      note = `Se aplicó 50% en ${pairs} producto(s) (segundos de cada par).`;
+      // Cada segundo ítem de un par tiene 50% de descuento
+      discount = Math.floor(qty / 2) * unitPrice * 0.5;
+      note = `50% en ${Math.floor(qty / 2)} segundo(s) de par`;
     } else if (promo === "three_for_two") {
-      // Por cada 3, se cobra solo 2 (1 gratis)
-      const trios = Math.floor(qty / 3);
-      discount = trios * unitPrice; // un producto gratis por cada trio
-      note = `Se aplicó 3x2 en ${trios} grupo(s) de 3.`;
+      // Cada grupo de 3 paga sólo 2
+      discount = Math.floor(qty / 3) * unitPrice;
+      note = `3x2 en ${Math.floor(qty / 3)} grupo(s)`;
     } else if (promo === "ten_over_30000") {
-      // Si el subtotal supera $30.000, aplicar 10% sobre el total
-      if (totalRaw > 30000) {
-        discount = totalRaw * 0.1;
-        note = `10% aplicado por superar $30.000.`;
+      // 10% si el subtotal supera $30.000
+      if (subtotal > 30000) {
+        discount = subtotal * 0.1;
+        note = "10% por superar $30.000";
       } else {
-        note = `No alcanza $30.000 para aplicar 10%.`;
+        note = "No alcanza $30.000";
       }
     }
 
-    const totalFinal = Math.max(0, totalRaw - discount);
+    const total = Math.max(0, subtotal - discount);
 
+    // Actualizar la UI
     totalRawEl.innerHTML = `Total sin descuento: <strong>${formatCurrency(
-      totalRaw
+      subtotal
     )}</strong>`;
-    discountAmountEl.innerHTML = `Descuento aplicado: <strong>${formatCurrency(
-      discount
-    )}</strong> ${
-      note ? '<br/><small style="color:#6b4423;">' + note + "</small>" : ""
-    }`;
+    discountAmountEl.innerHTML =
+      `Descuento aplicado: <strong>${formatCurrency(discount)}</strong>` +
+      (note ? `<br/><small style="color:#6b4423">${note}</small>` : "");
     totalFinalEl.innerHTML = `Total final: <strong>${formatCurrency(
-      totalFinal
+      total
     )}</strong>`;
     savingsEl.innerHTML = `Ahorro: <strong>${formatCurrency(
       discount
     )}</strong>`;
-  }
+  };
 
-  // Eventos: recalcular al hacer clic y cuando cambian los inputs
-  calculateBtn.addEventListener("click", calculate);
-  productSelect.addEventListener("change", calculate);
-  quantityInput.addEventListener("input", calculate);
-  promoSelect.addEventListener("change", calculate);
+  // Eventos: recalcular al cambiar inputs o al hacer clic
+  calculateBtn.addEventListener("click", calculateTotals);
+  productSelect.addEventListener("change", calculateTotals);
+  quantityInput.addEventListener("input", calculateTotals);
+  promoSelect.addEventListener("change", calculateTotals);
 
-  // Cálculo inicial
-  calculate();
+  // cálculo inicial
+  calculateTotals();
 });
